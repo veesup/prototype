@@ -1,4 +1,4 @@
-﻿using OrderAPI.Models;
+﻿using Models;
 using System.Collections.Generic;
 
 namespace Interfaces
