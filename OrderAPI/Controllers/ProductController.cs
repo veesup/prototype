@@ -1,6 +1,8 @@
 ﻿using Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OrderAPI.Auth;
 
 namespace OrderAPI.Controllers
 {
@@ -15,6 +17,7 @@ namespace OrderAPI.Controllers
             _repository = repository;
         }
 
+        [Authorize(Roles = UserRoles.Admin)]
         [HttpGet]
         public IActionResult GetProducts()
         {
