@@ -16,5 +16,15 @@ namespace Repository
             FindAll(trackChanges)
             .ToList();
 
+
+        public IEnumerable<Product> GetProduct(int id, bool trackChanges) =>
+            FindByCondition(product => product.Id == id, trackChanges)
+            .ToList();
+            
+
+
+
+
+
     }
 }

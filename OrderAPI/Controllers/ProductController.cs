@@ -22,5 +22,19 @@ namespace OrderAPI.Controllers
             return Ok(products);
         }
 
+        [HttpGet("{id:int}")]
+        public IActionResult GetProducts(int id)
+        {
+            var product = _repository.Product.GetProduct(id, trackChanges: false);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(product);
+            }
+        }
+
     }
 }
